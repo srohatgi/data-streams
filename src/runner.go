@@ -2,10 +2,11 @@ package main
 
 import (
 	"github.com/araddon/cass"
+	"github.com/codegangsta/martini"
 	"fmt"
 	"net/http"
 )
-
+  
 // Default Request Handler
 func defaultHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Hello %s!</h1>", r.URL.Path[1:])
@@ -40,6 +41,12 @@ func main() {
 		fmt.Println("insert/get single row, single col failed: testcol - keyinserttest")
 	}
 
+	m := martini.Classic()
+	m.Get("/", func() string {
+		return "hello world"
+	});
+	m.Run()
+	
 	//http.HandleFunc("/", defaultHandler)
 	//http.ListenAndServe(":8080", nil)
 

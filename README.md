@@ -40,3 +40,7 @@ install cassandra go driver
     $ go get github.com/pomack/thrift4go/lib/go/src/thrift
     $ go get github.com/araddon/cass
 
+installing web framework: martini
+---------------------------------
+
+    $ go get github.com/codegangsta/martini
