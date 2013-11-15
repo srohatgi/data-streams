@@ -1,30 +1,27 @@
 data-streams
 ============
 
-A backend service for storing arbitrary data streams into Cassandra. The 
+A backend service for storing arbitrary data streams into Cassandra. Install instructions below.
 
 installing go
 -------------
 
-* `sudo add-apt-repository ppa:gophers/go`
-* `sudo apt-get update`
-* `sudo apt-get install golang-stable`
+    $ sudo add-apt-repository ppa:gophers/go
+    $ sudo apt-get update
+    $ sudo apt-get install golang-stable
 
 setup go
 --------
 
-* `mkdir -p ~/go`
-* `export GOPATH=~/go`
+    $ mkdir -p ~/go
+    $ export GOPATH=~/go
 
-installing gocode
------------------
+ide setup
+---------
 
-* `go get -u github.com/nsf/gocode`
-
-installing goclipse
--------------------
-
-* `go env` provides all environment variables
+* installing code completion: `$ go get -u github.com/nsf/gocode`
+* using eclipse plugin `goclipse`, install site for: http://goclipse.googlecode.com/svn/trunk/goclipse-update-site/ 
+* configure goclipse using values from `go env`
 
 installing cassandra
 --------------------
@@ -37,6 +34,9 @@ data stax enterprise build
     $ sudo apt-get update
     $ sudo apt-get install dse-full opscenter ## Installs both DataStax Enterprise and OpsCenter.
     
-install go driver
------------------
+install cassandra go driver
+---------------------------
+
+    $ go get github.com/pomack/thrift4go/lib/go/src/thrift
+    $ go get github.com/araddon/cass
 
