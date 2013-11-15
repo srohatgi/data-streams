@@ -5,8 +5,15 @@ import (
 	"github.com/codegangsta/martini"
 	"fmt"
 	"net/http"
+	"encoding/json"
 )
   
+type Message struct {
+    Name string
+    Age int32
+    Parents [2]string
+}
+
 // Default Request Handler
 func defaultHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Hello %s!</h1>", r.URL.Path[1:])
@@ -42,9 +49,19 @@ func main() {
 	}
 
 	m := martini.Classic()
+	
 	m.Get("/", func() string {
 		return "hello world"
-	});
+	})
+	
+	m.Get("/json", func() string {
+		s := [...]string{"Father", "Mother"}
+		d := Message{"Bob", 6, s }
+		b, _ := json.Marshal(d)
+		return string(b)
+		//return `{"Name":"Wednesday","Age":6,"Parents":["Gomez","Morticia"]}`
+	})
+	
 	m.Run()
 	
 	//http.HandleFunc("/", defaultHandler)
