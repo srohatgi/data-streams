@@ -20,7 +20,7 @@ ide setup
 ---------
 
 * installing code completion: `$ go get -u github.com/nsf/gocode`
-* using eclipse plugin `goclipse`, install site for: http://goclipse.googlecode.com/svn/trunk/goclipse-update-site/ 
+* using eclipse plugin `goclipse`; install site: http://goclipse.googlecode.com/svn/trunk/goclipse-update-site/ 
 * configure goclipse using values from `go env`
 
 installing cassandra
