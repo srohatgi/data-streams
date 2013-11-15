@@ -6,14 +6,10 @@ A backend service for storing arbitrary data streams into Cassandra. Install ins
 installing go
 -------------
 
-    $ sudo add-apt-repository ppa:gophers/go
-    $ sudo apt-get update
-    $ sudo apt-get install golang-stable
-
-setup go
---------
-
+    $ rm -rf /usr/local/go
+    $ sudo tar -C /usr/local -xzf ~/Downloads/go1.1.2.linux-amd64.tar.gz
     $ mkdir -p ~/go
+    $ export GOROOT=/usr/local/go
     $ export GOPATH=~/go
 
 ide setup
